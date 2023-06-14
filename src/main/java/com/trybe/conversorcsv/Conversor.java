@@ -23,11 +23,6 @@ public class Conversor {
   public static void main(String[] args) throws IOException {
     File pastaDeEntradas = new File("./entradas/");
     File pastaDeSaidas = new File("./saidas/");
-
-    if (!pastaDeSaidas.exists()) {
-      pastaDeSaidas.mkdir();
-    }
-
     new Conversor().converterPasta(pastaDeEntradas, pastaDeSaidas);
   }
 
@@ -44,6 +39,7 @@ public class Conversor {
    */
   public void converterPasta(File pastaDeEntradas, File pastaDeSaidas) throws IOException {
     for (File arquivo : pastaDeEntradas.listFiles()) {
+      pastaDeSaidas.mkdir();
       try (BufferedReader leitor = new BufferedReader(new FileReader(arquivo))) {
         this.escreverNoArquivo(leitor, pastaDeSaidas, arquivo.getName());
       } catch (IOException e) {
