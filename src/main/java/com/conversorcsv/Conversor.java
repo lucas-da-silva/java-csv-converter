@@ -1,4 +1,4 @@
-package com.trybe.conversorcsv;
+package com.conversorcsv;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -13,12 +13,13 @@ import java.time.format.DateTimeFormatter;
  * Classe Conversor é a classe principal.
  */
 public class Conversor {
+
   /**
    * Função utilizada apenas para validação da solução do desafio.
    *
    * @param args Não utilizado.
    * @throws IOException Caso ocorra algum problema ao ler os arquivos de entrada ou gravar os
-   *         arquivos de saída.
+   *                     arquivos de saída.
    */
   public static void main(String[] args) throws IOException {
     File pastaDeEntradas = new File("./entradas/");
@@ -31,11 +32,10 @@ public class Conversor {
    * saídas, deixando os arquivos originais inalterados.
    *
    * @param pastaDeEntradas Pasta contendo os arquivos CSV gerados pela página web.
-   * @param pastaDeSaidas Pasta em que serão colocados os arquivos gerados no formato requerido pelo
-   *        subsistema.
-   *
+   * @param pastaDeSaidas   Pasta em que serão colocados os arquivos gerados no formato requerido
+   *                        pelo subsistema.
    * @throws IOException Caso ocorra algum problema ao ler os arquivos de entrada ou gravar os
-   *         arquivos de saída.
+   *                     arquivos de saída.
    */
   public void converterPasta(File pastaDeEntradas, File pastaDeSaidas) throws IOException {
     for (File arquivo : pastaDeEntradas.listFiles()) {
@@ -47,6 +47,7 @@ public class Conversor {
       }
     }
   }
+
 
   private void escreverNoArquivo(BufferedReader bufferedLeitor, File pastaDeSaidas,
       String arquivoNome) throws IOException {
